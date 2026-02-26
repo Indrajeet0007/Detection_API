@@ -35,4 +35,9 @@ public class ScanRestController {
         return externalLogService.fetchLogs();
     }
 
+    @GetMapping("/getCheck")
+    public   String getCheck(){
+        log.info("getCheck   inside restController");
+        return "Hello GUYS TOKEN WORKED!!!!!";
+    }
 }
