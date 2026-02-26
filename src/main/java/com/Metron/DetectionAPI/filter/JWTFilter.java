@@ -31,7 +31,7 @@ public class JWTFilter extends OncePerRequestFilter {
             UserTable  userTable = userRepository.findByUserName(userName).get();
             if(JWTUtility.validate(claims,userTable)){
                 UsernamePasswordAuthenticationToken AuthenticationToken = new UsernamePasswordAuthenticationToken(userTable, null , userTable.getAuthorities());
-                AuthenticationToken.setDetails( new WebAuthenticationDetailsSource().buildDetails(request));
+//                AuthenticationToken.setDetails( new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(AuthenticationToken);
             }
         }
